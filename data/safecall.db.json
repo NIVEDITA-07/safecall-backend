@@ -59,7 +59,9 @@
       "username": "Bob",
       "role": "caregiver",
       "phone": "Bob",
-      "createdAt": "2026-10-15T03:59:56.815Z"
+      "createdAt": "2026-10-15T03:59:56.815Z",
+      "fcmToken": "fcm_cg_usr_df5ce2e7fc55e224_hvc7jwc1",
+      "fcmUpdatedAt": "2026-10-15T15:52:36.902Z"
     },
     {
       "id": "usr_e8116711ef889d77",
@@ -90,7 +92,9 @@
     "c82790cf16b2b538d8f6d8f6d3de46daaf3af14d7bfe3e9019f376993287df58": "usr_df5ce2e7fc55e224",
     "8fb6ca79c411be17ffe0d27e47a322b2e6a5a6085847489bf433978231000fde": "usr_e8116711ef889d77",
     "fb7c0c32be96d3daef7d621634fe7bf92f04df5ff3319cc0b172ed04dc485eba": "usr_e8116711ef889d77",
-    "038ef3ea8cf4ffa210ec4d8cb747a3aeffc6e2b469626953e54c1a63719996a7": "usr_df5ce2e7fc55e224"
+    "038ef3ea8cf4ffa210ec4d8cb747a3aeffc6e2b469626953e54c1a63719996a7": "usr_df5ce2e7fc55e224",
+    "8fc4e690fb1bea740f5d6c1851cd3d87496ca77637bb0acbcb50a654940a4945": "usr_df5ce2e7fc55e224",
+    "f22305fdf79a2cdc08404e6703b4cadd4f8c67506c0487f084a1dfeeefaadeca": "usr_e8116711ef889d77"
   },
   "pairings": {
     "D5KEYS": {
@@ -102,11 +106,11 @@
       "caregiverId": null,
       "status": "PENDING_CAREGIVER"
     },
-    "RU3TKL": {
-      "code": "RU3TKL",
+    "8VEVWM": {
+      "code": "8VEVWM",
       "elderlyId": "usr_e8116711ef889d77",
       "elderlyName": "Meera",
-      "expiresAt": 1792042285912,
+      "expiresAt": 1792079872276,
       "attempts": 0,
       "caregiverId": null,
       "status": "PENDING_CAREGIVER"
@@ -145,6 +149,30 @@
     }
   ],
   "alerts": [
+    {
+      "id": "alt_ba15c4ff72b397fe",
+      "idempotentId": "evt_1792079790380",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "callerName": "Dr. Robert Vance",
+      "callerPhone": "+1 555-911-0022",
+      "score": 100,
+      "level": "HIGH",
+      "explanation": "Emergency designated caller calling at 3:15 AM with repeated missed calls. Maximum urgency score!",
+      "callTime": 1792079790380,
+      "isSimulation": true,
+      "status": "SIMULATED",
+      "timestamps": {
+        "generated": "2026-10-15T15:56:30.926Z",
+        "queued": "2026-10-15T15:56:30.926Z",
+        "sent": "2026-10-15T15:56:30.926Z",
+        "delivered": "2026-10-15T15:56:30.926Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
     {
       "id": "alt_6dca1a2b24d4ed04",
       "idempotentId": "evt_1792075807283",
