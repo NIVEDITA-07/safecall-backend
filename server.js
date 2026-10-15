@@ -891,7 +891,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // Direct APK Download Endpoint
-    if ((pathname === '/app-debug.apk' || pathname === '/download' || pathname === '/apk') && method === 'GET') {
+    if ((pathname === '/app-debug.apk' || pathname === '/download' || pathname === '/apk') && (method === 'GET' || method === 'HEAD')) {
       const apkPath = path.join(__dirname, 'app-debug.apk');
       if (fs.existsSync(apkPath)) {
         const stat = fs.statSync(apkPath);
