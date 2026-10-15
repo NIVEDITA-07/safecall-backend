@@ -80,6 +80,24 @@
       "phone": "1122334455",
       "password": "",
       "createdAt": "2026-10-15T18:36:24.612Z"
+    },
+    {
+      "id": "usr_ca48f1b62215f3a2",
+      "email": "grandma rosa@safecall.local",
+      "name": "Grandma Rosa",
+      "username": "Grandma Rosa",
+      "role": "elderly",
+      "phone": "Grandma Rosa",
+      "createdAt": "2026-10-15T19:49:26.494Z"
+    },
+    {
+      "id": "usr_5e9037cc2dd9720f",
+      "email": "niveditha@safecall.local",
+      "name": "Niveditha",
+      "username": "Niveditha",
+      "role": "caregiver",
+      "phone": "Niveditha",
+      "createdAt": "2026-10-15T19:49:26.516Z"
     }
   ],
   "tokens": {
@@ -104,7 +122,9 @@
     "038ef3ea8cf4ffa210ec4d8cb747a3aeffc6e2b469626953e54c1a63719996a7": "usr_df5ce2e7fc55e224",
     "8fc4e690fb1bea740f5d6c1851cd3d87496ca77637bb0acbcb50a654940a4945": "usr_df5ce2e7fc55e224",
     "f22305fdf79a2cdc08404e6703b4cadd4f8c67506c0487f084a1dfeeefaadeca": "usr_e8116711ef889d77",
-    "97ab7e1af242592fdec2beba1dc126596071f1d070314460e19ab927ddecb966": "usr_c28c46d410fb"
+    "97ab7e1af242592fdec2beba1dc126596071f1d070314460e19ab927ddecb966": "usr_c28c46d410fb",
+    "a3f4d68ce6751f360aaff4d53a34f6bd235ab565449b9cea360eba8beb91064d": "usr_ca48f1b62215f3a2",
+    "224286d087b35ee5a7472fe959bea111c8db9b841b464aa599fe985bffab25d9": "usr_5e9037cc2dd9720f"
   },
   "pairings": {
     "D5KEYS": {
@@ -154,6 +174,16 @@
       "caregiverId": "usr_788d48612a6f4cf9",
       "caregiverName": "Bob Henderson (Son)",
       "createdAt": "2026-10-15T05:23:34.376Z",
+      "status": "ACTIVE",
+      "alertThreshold": 80
+    },
+    {
+      "id": "rel_37906eddbe7465c3",
+      "elderlyId": "usr_ca48f1b62215f3a2",
+      "elderlyName": "Grandma Rosa",
+      "caregiverId": "usr_5e9037cc2dd9720f",
+      "caregiverName": "Niveditha",
+      "createdAt": "2026-10-15T19:49:26.539Z",
       "status": "ACTIVE",
       "alertThreshold": 80
     }
