@@ -1,0 +1,12 @@
+{
+  "name": "safecall-backend",
+  "version": "1.0.0",
+  "description": "SafeCall AI Secure Pairing & Alert Dispatch Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/backend.test.js"
+  },
+  "author": "SafeCall AI Team",
+  "license": "ISC"
+}

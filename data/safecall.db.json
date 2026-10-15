@@ -1,0 +1,546 @@
+{
+  "users": [
+    {
+      "id": "usr_4baf344197e36903",
+      "email": "elderly.alice@safecall.org",
+      "passwordHash": "932b9123d51623ab2ba66fb08d9127a56d4bb8dbe7d8b6a7f59a21d9f9f411ca6992294ffe9f519bc1a8dd45faafc3ad87f3af3939a37370c33cdb339832d8bb",
+      "salt": "e9c51059e69bc35406774e42695cfbee",
+      "name": "Alice Henderson",
+      "role": "elderly",
+      "phone": "+15551234567",
+      "createdAt": "2026-10-14T15:47:35.475Z",
+      "fcmToken": null
+    },
+    {
+      "id": "usr_788d48612a6f4cf9",
+      "email": "caregiver.bob@safecall.org",
+      "passwordHash": "57744a0e5be41b13ffaa088f161b79fa74cc425663069e95f198ffed00e399b3ac2dbfd6b631496710424a4eb4e165f61289f3cc95e021f4d8e44e2d3d10abf6",
+      "salt": "4705d41d560debac61831e4026247f3e",
+      "name": "Bob Henderson (Son)",
+      "role": "caregiver",
+      "phone": "+15557654321",
+      "createdAt": "2026-10-14T15:47:35.529Z",
+      "fcmToken": "fcm_token_caregiver_device_alpha_1234567890",
+      "fcmUpdatedAt": "2026-10-14T15:47:35.796Z"
+    },
+    {
+      "id": "usr_7911c036ed42afde",
+      "email": "caregiver.charlie@safecall.org",
+      "passwordHash": "90bc257873c3661ef74344c293c990d0f87980c6ea73614bd14947a964c21efd04aaf73279c83a37c5a74b9a019b8d92f8a32e1d809c7dcfd8edfc1b0b3aab56",
+      "salt": "c915ef5ef26330c0213c579c9b5907df",
+      "name": "Charlie Smith (Unrelated)",
+      "role": "caregiver",
+      "phone": "+15559998888",
+      "createdAt": "2026-10-14T15:47:35.587Z",
+      "fcmToken": null
+    },
+    {
+      "id": "usr_536154324123e96a",
+      "email": "niveditha_senior@safecall.local",
+      "name": "Niveditha Senior",
+      "username": "niveditha_senior",
+      "role": "elderly",
+      "phone": "7592934065",
+      "createdAt": "2026-10-15T03:58:25.154Z"
+    },
+    {
+      "id": "usr_e31ca76e3560ea7b",
+      "email": "bob_caregiver_free@safecall.local",
+      "name": "Bob Caregiver",
+      "username": "bob_caregiver_free",
+      "role": "caregiver",
+      "phone": "9876543210",
+      "createdAt": "2026-10-15T03:58:25.166Z"
+    },
+    {
+      "id": "usr_df5ce2e7fc55e224",
+      "email": "bob@safecall.local",
+      "name": "Bob",
+      "username": "Bob",
+      "role": "caregiver",
+      "phone": "Bob",
+      "createdAt": "2026-10-15T03:59:56.815Z"
+    },
+    {
+      "id": "usr_e8116711ef889d77",
+      "email": "meera@safecall.local",
+      "name": "Meera",
+      "username": "Meera",
+      "role": "elderly",
+      "phone": "Meera",
+      "createdAt": "2026-10-15T04:00:10.398Z"
+    }
+  ],
+  "tokens": {
+    "9bb18861f5915e6556abbd22cdd9aee6c14bb6c9c1b37cad0542ce6091e83415": "usr_4baf344197e36903",
+    "2eea8d314fe5c7ad5ed85a275d757024c97506b0c1898ce22fe6e15fa75ef979": "usr_788d48612a6f4cf9",
+    "4a4aceb37f0445e69927e7333bfd6927302874a57a9d0fcc7912ab7f6d8bfd7a": "usr_7911c036ed42afde",
+    "f4c1556ef6011a94ecdd6b2e392a6b6527a8d9a0df0266199d881f8b0ac9bf4f": "usr_4baf344197e36903",
+    "2a91ac7b052c334489a1b18eab73cf280dc39c94e9c0b41d6c79a3d5645ae987": "usr_536154324123e96a",
+    "0a4e83178bfa4faa7d022485064e0be76cb1534d44be8c9fb99e698949456cd3": "usr_e31ca76e3560ea7b",
+    "e8ea41d81328a66ca426eb0fb5754a6d747ff13f38f32d2af3e3cc1741f804e3": "usr_536154324123e96a",
+    "2fb0196ded870b4af8e151d8a6367e941563875f9f65d957c7f897d418756f76": "usr_e31ca76e3560ea7b",
+    "2fae879eaf8f7c0476def083d6ac5151ebcb4bf96acf294a79c734e1c9e21292": "usr_df5ce2e7fc55e224",
+    "59ed0e3edc918d82e929a430dba6378586caa13ec9a5df5f02e472fecee70686": "usr_df5ce2e7fc55e224",
+    "773b0511f7a0547770ed51cdaf80317a270cb95c39d315a01df332f135506460": "usr_e8116711ef889d77",
+    "a932e9b453b283f22baa1d49e3bcc2b83301ebbd230347dcb5de36ea2dd03eed": "usr_df5ce2e7fc55e224",
+    "4036ce6f5889856839465f16270d843315e19cbd81b12ffcc5bba75c4c881397": "usr_e8116711ef889d77",
+    "d5a74cd7a12cac05712c160711c48d5223a3d0b3bae2d958fe38dc082455e4dd": "usr_df5ce2e7fc55e224",
+    "17dd180440958adac0281c911e38cb2de65374c5bb3f19a6df27243148384774": "usr_e8116711ef889d77",
+    "c82790cf16b2b538d8f6d8f6d3de46daaf3af14d7bfe3e9019f376993287df58": "usr_df5ce2e7fc55e224",
+    "8fb6ca79c411be17ffe0d27e47a322b2e6a5a6085847489bf433978231000fde": "usr_e8116711ef889d77",
+    "fb7c0c32be96d3daef7d621634fe7bf92f04df5ff3319cc0b172ed04dc485eba": "usr_e8116711ef889d77",
+    "038ef3ea8cf4ffa210ec4d8cb747a3aeffc6e2b469626953e54c1a63719996a7": "usr_df5ce2e7fc55e224"
+  },
+  "pairings": {
+    "D5KEYS": {
+      "code": "D5KEYS",
+      "elderlyId": "usr_536154324123e96a",
+      "elderlyName": "Niveditha Senior",
+      "expiresAt": 1792037094708,
+      "attempts": 1,
+      "caregiverId": null,
+      "status": "PENDING_CAREGIVER"
+    },
+    "RU3TKL": {
+      "code": "RU3TKL",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "expiresAt": 1792042285912,
+      "attempts": 0,
+      "caregiverId": null,
+      "status": "PENDING_CAREGIVER"
+    }
+  },
+  "relationships": [
+    {
+      "id": "rel_07d4a60ab6a7f66e",
+      "elderlyId": "usr_536154324123e96a",
+      "elderlyName": "Niveditha Senior",
+      "caregiverId": "usr_e31ca76e3560ea7b",
+      "caregiverName": "Bob Caregiver",
+      "createdAt": "2026-10-15T03:58:25.204Z",
+      "status": "ACTIVE",
+      "alertThreshold": 80
+    },
+    {
+      "id": "rel_63bc5625cce131de",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "caregiverId": "usr_df5ce2e7fc55e224",
+      "caregiverName": "Bob",
+      "createdAt": "2026-10-15T04:00:27.256Z",
+      "status": "ACTIVE",
+      "alertThreshold": 80
+    },
+    {
+      "id": "rel_deaf61686f21411b",
+      "elderlyId": "usr_4baf344197e36903",
+      "elderlyName": "Alice Henderson",
+      "caregiverId": "usr_788d48612a6f4cf9",
+      "caregiverName": "Bob Henderson (Son)",
+      "createdAt": "2026-10-15T05:23:34.376Z",
+      "status": "ACTIVE",
+      "alertThreshold": 80
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alt_6dca1a2b24d4ed04",
+      "idempotentId": "evt_1792075807283",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "callerName": "General Hospital ICU (Real Telephony Event)",
+      "callerPhone": "+91 98123 45678",
+      "score": 86,
+      "level": "HIGH",
+      "explanation": "Real Call: 3 repeated calls within 10 minutes from critical contact",
+      "callTime": 1792075807282,
+      "isSimulation": false,
+      "status": "SENT",
+      "timestamps": {
+        "generated": "2026-10-15T14:50:07.283Z",
+        "queued": "2026-10-15T14:50:07.283Z",
+        "sent": "2026-10-15T14:50:07.283Z",
+        "delivered": "2026-10-15T14:50:07.283Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_c300db3673cdd90e",
+      "idempotentId": "evt_1792075807273",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "callerName": "Dr. Robert Vance (Simulation)",
+      "callerPhone": "+1 555-911-0022",
+      "score": 100,
+      "level": "HIGH",
+      "explanation": "Simulated Emergency Call at 3:15 AM - Maximum Urgency",
+      "callTime": 1792075807273,
+      "isSimulation": true,
+      "status": "SIMULATED",
+      "timestamps": {
+        "generated": "2026-10-15T14:50:07.273Z",
+        "queued": "2026-10-15T14:50:07.273Z",
+        "sent": "2026-10-15T14:50:07.273Z",
+        "delivered": "2026-10-15T14:50:07.273Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_935542aace3d2ab5",
+      "idempotentId": "evt_1792042007965",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "callerName": "Dr. Robert Vance",
+      "callerPhone": "+1 555-911-0022",
+      "score": 100,
+      "level": "HIGH",
+      "explanation": "Emergency designated caller calling at 3:15 AM with repeated missed calls. Maximum urgency score!",
+      "callTime": 1792042007965,
+      "isSimulation": true,
+      "status": "SIMULATED",
+      "timestamps": {
+        "generated": "2026-10-15T05:26:46.816Z",
+        "queued": "2026-10-15T05:26:46.816Z",
+        "sent": "2026-10-15T05:26:46.816Z",
+        "delivered": "2026-10-15T05:26:46.816Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_a7acf7d0fe955af6",
+      "idempotentId": "evt_1792042004159",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "callerName": "Dr. Robert Vance",
+      "callerPhone": "+1 555-911-0022",
+      "score": 100,
+      "level": "HIGH",
+      "explanation": "Emergency designated caller calling at 3:15 AM with repeated missed calls. Maximum urgency score!",
+      "callTime": 1792042004159,
+      "isSimulation": true,
+      "status": "SIMULATED",
+      "timestamps": {
+        "generated": "2026-10-15T05:26:43.010Z",
+        "queued": "2026-10-15T05:26:43.010Z",
+        "sent": "2026-10-15T05:26:43.010Z",
+        "delivered": "2026-10-15T05:26:43.010Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_865d0a144d0f171f",
+      "idempotentId": "evt_1792041997179",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "callerName": "Dr. Robert Vance",
+      "callerPhone": "+1 555-911-0022",
+      "score": 100,
+      "level": "HIGH",
+      "explanation": "Emergency designated caller calling at 3:15 AM with repeated missed calls. Maximum urgency score!",
+      "callTime": 1792041997179,
+      "isSimulation": true,
+      "status": "SIMULATED",
+      "timestamps": {
+        "generated": "2026-10-15T05:26:36.066Z",
+        "queued": "2026-10-15T05:26:36.066Z",
+        "sent": "2026-10-15T05:26:36.066Z",
+        "delivered": "2026-10-15T05:26:36.066Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_571f8afcc939bf2c",
+      "idempotentId": "evt_1792041820498",
+      "elderlyId": "usr_4baf344197e36903",
+      "elderlyName": "Alice Henderson",
+      "callerName": "Dr. Robert Vance",
+      "callerPhone": "+1 555-911-0022",
+      "score": 100,
+      "level": "HIGH",
+      "explanation": "Emergency designated caller calling at 3:15 AM with repeated missed calls. Maximum urgency score!",
+      "callTime": 1792041820498,
+      "isSimulation": true,
+      "status": "ACKNOWLEDGED",
+      "timestamps": {
+        "generated": "2026-10-15T05:23:39.342Z",
+        "queued": "2026-10-15T05:23:39.342Z",
+        "sent": "2026-10-15T05:23:39.342Z",
+        "delivered": "2026-10-15T05:23:39.342Z",
+        "acknowledged": "2026-10-15T05:23:41.671Z"
+      },
+      "acknowledgedBy": {
+        "caregiverId": "usr_788d48612a6f4cf9",
+        "caregiverName": "Bob Henderson (Son)"
+      },
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_14ff34a7ecec483b",
+      "idempotentId": "evt_1792037250729",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "callerName": "Dr. Robert Vance",
+      "callerPhone": "+1 555-911-0022",
+      "score": 100,
+      "level": "HIGH",
+      "explanation": "Emergency designated caller calling at 3:15 AM with repeated missed calls. Maximum urgency score!",
+      "callTime": 1792037250729,
+      "isSimulation": true,
+      "status": "SIMULATED",
+      "timestamps": {
+        "generated": "2026-10-15T04:07:30.388Z",
+        "queued": "2026-10-15T04:07:30.388Z",
+        "sent": "2026-10-15T04:07:30.388Z",
+        "delivered": "2026-10-15T04:07:30.388Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_176b386e3e8d5ddc",
+      "idempotentId": "evt_sim_1792037088294",
+      "elderlyId": "usr_4baf344197e36903",
+      "elderlyName": "Alice Henderson",
+      "callerName": "General Hospital Emergency",
+      "callerPhone": "+91 91111 22233",
+      "score": 85,
+      "level": "HIGH",
+      "explanation": "Pipeline Simulation: Caller \"General Hospital Emergency\" evaluated with urgency score 85/100.",
+      "callTime": 1792037088294,
+      "isSimulation": false,
+      "status": "SENT",
+      "timestamps": {
+        "generated": "2026-10-15T04:04:48.366Z",
+        "queued": "2026-10-15T04:04:48.366Z",
+        "sent": "2026-10-15T04:04:48.366Z",
+        "delivered": "2026-10-15T04:04:48.366Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 4,
+      "dispatches": [
+        {
+          "caregiverId": "usr_788d48612a6f4cf9",
+          "status": "SENT_TO_PROVIDER",
+          "provider": "FCM_MOCK",
+          "timestamp": "2026-10-15T04:04:48.374Z"
+        }
+      ]
+    },
+    {
+      "id": "alt_45af3c5fbfbb1909",
+      "idempotentId": "evt_1792036848513",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "callerName": "Sarah Jenkins (Daughter)",
+      "callerPhone": "+1 555-876-5432",
+      "score": 85,
+      "level": "HIGH",
+      "explanation": "Trusted family contact with 3 rapid consecutive missed calls within 15 minutes. Threshold exceeded!",
+      "callTime": 1792036848513,
+      "isSimulation": true,
+      "status": "SIMULATED",
+      "timestamps": {
+        "generated": "2026-10-15T04:00:47.407Z",
+        "queued": "2026-10-15T04:00:47.407Z",
+        "sent": "2026-10-15T04:00:47.407Z",
+        "delivered": "2026-10-15T04:00:47.407Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_0f0af388383c9a3a",
+      "idempotentId": "evt_1792036833366",
+      "elderlyId": "usr_e8116711ef889d77",
+      "elderlyName": "Meera",
+      "callerName": "Dr. Robert Vance",
+      "callerPhone": "+1 555-911-0022",
+      "score": 100,
+      "level": "HIGH",
+      "explanation": "Emergency designated caller calling at 3:15 AM with repeated missed calls. Maximum urgency score!",
+      "callTime": 1792036833366,
+      "isSimulation": true,
+      "status": "SIMULATED",
+      "timestamps": {
+        "generated": "2026-10-15T04:00:32.239Z",
+        "queued": "2026-10-15T04:00:32.239Z",
+        "sent": "2026-10-15T04:00:32.239Z",
+        "delivered": "2026-10-15T04:00:32.239Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_2e706ae5a1e1adda",
+      "idempotentId": "evt_1792036794727",
+      "elderlyId": "usr_536154324123e96a",
+      "elderlyName": "Niveditha Senior",
+      "callerName": "Dr. Robert Vance",
+      "callerPhone": "+1 555-911-0022",
+      "score": 100,
+      "level": "HIGH",
+      "explanation": "Urgent emergency call at 3:15 AM",
+      "callTime": 1792036794727,
+      "isSimulation": true,
+      "status": "SIMULATED",
+      "timestamps": {
+        "generated": "2026-10-15T03:59:54.727Z",
+        "queued": "2026-10-15T03:59:54.727Z",
+        "sent": "2026-10-15T03:59:54.727Z",
+        "delivered": "2026-10-15T03:59:54.727Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 1,
+      "dispatches": []
+    },
+    {
+      "id": "alt_1d5613bc88689bc5",
+      "idempotentId": "evt_sim_1791999542806",
+      "elderlyId": "usr_4baf344197e36903",
+      "elderlyName": "Alice Henderson",
+      "callerName": "General Hospital ICU",
+      "callerPhone": "+91 98123 45678",
+      "score": 85,
+      "level": "HIGH",
+      "explanation": "Pipeline Simulation: Caller \"General Hospital ICU\" evaluated with urgency score 85/100.",
+      "callTime": 1791999542806,
+      "isSimulation": false,
+      "status": "SENT",
+      "timestamps": {
+        "generated": "2026-10-14T17:39:02.836Z",
+        "queued": "2026-10-14T17:39:02.836Z",
+        "sent": "2026-10-14T17:39:02.836Z",
+        "delivered": "2026-10-14T17:39:02.836Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 0,
+      "dispatches": []
+    },
+    {
+      "id": "alt_e8295b4a20e10c6e",
+      "idempotentId": "evt_sim_1791999525721",
+      "elderlyId": "usr_4baf344197e36903",
+      "elderlyName": "Alice Henderson",
+      "callerName": "General Hospital Emergency",
+      "callerPhone": "+91 91111 22233",
+      "score": 85,
+      "level": "HIGH",
+      "explanation": "Pipeline Simulation: Caller \"General Hospital Emergency\" evaluated with urgency score 85/100.",
+      "callTime": 1791999525721,
+      "isSimulation": false,
+      "status": "SENT",
+      "timestamps": {
+        "generated": "2026-10-14T17:38:45.817Z",
+        "queued": "2026-10-14T17:38:45.817Z",
+        "sent": "2026-10-14T17:38:45.817Z",
+        "delivered": "2026-10-14T17:38:45.817Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 0,
+      "dispatches": []
+    },
+    {
+      "id": "alt_f6d3e29c184bee1a",
+      "idempotentId": "evt_sim_1791998317197",
+      "elderlyId": "usr_4baf344197e36903",
+      "elderlyName": "Alice Henderson",
+      "callerName": "General Hospital Emergency",
+      "callerPhone": "+91 91111 22233",
+      "score": 85,
+      "level": "HIGH",
+      "explanation": "Pipeline Simulation: Caller \"General Hospital Emergency\" evaluated with urgency score 85/100.",
+      "callTime": 1791998317197,
+      "isSimulation": false,
+      "status": "SENT",
+      "timestamps": {
+        "generated": "2026-10-14T17:18:55.802Z",
+        "queued": "2026-10-14T17:18:55.802Z",
+        "sent": "2026-10-14T17:18:55.802Z",
+        "delivered": "2026-10-14T17:18:55.802Z",
+        "acknowledged": null
+      },
+      "acknowledgedBy": null,
+      "linkedCaregiverCount": 0,
+      "dispatches": []
+    },
+    {
+      "id": "alt_da805fe0abf21751",
+      "idempotentId": "evt_urgent_1",
+      "elderlyId": "usr_4baf344197e36903",
+      "elderlyName": "Alice Henderson",
+      "callerName": "Hospital / Unknown Medical",
+      "callerPhone": "+15559990000",
+      "score": 85,
+      "level": "HIGH",
+      "explanation": "Repeated late night calls from unknown caller",
+      "callTime": 1791992855800,
+      "isSimulation": false,
+      "status": "ACKNOWLEDGED",
+      "timestamps": {
+        "generated": "2026-10-14T15:47:35.800Z",
+        "queued": "2026-10-14T15:47:35.800Z",
+        "sent": "2026-10-14T15:47:35.800Z",
+        "delivered": "2026-10-14T15:47:35.800Z",
+        "acknowledged": "2026-10-14T15:47:35.823Z"
+      },
+      "acknowledgedBy": {
+        "caregiverId": "usr_788d48612a6f4cf9",
+        "caregiverName": "Bob Henderson (Son)"
+      },
+      "linkedCaregiverCount": 1,
+      "dispatches": [
+        {
+          "caregiverId": "usr_788d48612a6f4cf9",
+          "status": "SENT_TO_PROVIDER",
+          "provider": "FCM_MOCK",
+          "timestamp": "2026-10-14T15:47:35.800Z"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "usr_4baf344197e36903": {
+      "threshold": 80,
+      "schedule": "ALL_DAY",
+      "autoAlertEnabled": true
+    },
+    "usr_788d48612a6f4cf9": {
+      "threshold": 80,
+      "schedule": "ALL_DAY",
+      "autoAlertEnabled": true
+    },
+    "usr_7911c036ed42afde": {
+      "threshold": 80,
+      "schedule": "ALL_DAY",
+      "autoAlertEnabled": true
+    }
+  }
+}
