@@ -71,6 +71,15 @@
       "role": "elderly",
       "phone": "Meera",
       "createdAt": "2026-10-15T04:00:10.398Z"
+    },
+    {
+      "id": "usr_c28c46d410fb",
+      "email": "1122334455@safecall.local",
+      "name": "Fresh Bob",
+      "role": "caregiver",
+      "phone": "1122334455",
+      "password": "",
+      "createdAt": "2026-10-15T18:36:24.612Z"
     }
   ],
   "tokens": {
@@ -94,7 +103,8 @@
     "fb7c0c32be96d3daef7d621634fe7bf92f04df5ff3319cc0b172ed04dc485eba": "usr_e8116711ef889d77",
     "038ef3ea8cf4ffa210ec4d8cb747a3aeffc6e2b469626953e54c1a63719996a7": "usr_df5ce2e7fc55e224",
     "8fc4e690fb1bea740f5d6c1851cd3d87496ca77637bb0acbcb50a654940a4945": "usr_df5ce2e7fc55e224",
-    "f22305fdf79a2cdc08404e6703b4cadd4f8c67506c0487f084a1dfeeefaadeca": "usr_e8116711ef889d77"
+    "f22305fdf79a2cdc08404e6703b4cadd4f8c67506c0487f084a1dfeeefaadeca": "usr_e8116711ef889d77",
+    "97ab7e1af242592fdec2beba1dc126596071f1d070314460e19ab927ddecb966": "usr_c28c46d410fb"
   },
   "pairings": {
     "D5KEYS": {
@@ -161,6 +171,11 @@
       "autoAlertEnabled": true
     },
     "usr_7911c036ed42afde": {
+      "threshold": 80,
+      "schedule": "ALL_DAY",
+      "autoAlertEnabled": true
+    },
+    "usr_c28c46d410fb": {
       "threshold": 80,
       "schedule": "ALL_DAY",
       "autoAlertEnabled": true

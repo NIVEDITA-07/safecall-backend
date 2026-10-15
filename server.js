@@ -372,17 +372,23 @@ const server = http.createServer(async (req, res) => {
         (u.username && u.username.toLowerCase() === identifier)
       );
 
-      // Free-will auto-registration: If user does not exist, create them immediately!
-      if (!user) {
+      if (user) {
+        if (name && name.trim()) {
+          user.name = name.trim();
+        }
+        if (role) {
+          user.role = role;
+        }
+      } else {
         const assignedRole = role || (identifier.includes('caregiver') || identifier.includes('bob') ? 'caregiver' : 'elderly');
         const newId = 'usr_' + crypto.randomBytes(8).toString('hex');
         user = {
           id: newId,
           email: identifier.includes('@') ? identifier : `${identifier}@safecall.local`,
-          name: name || rawIdentifier,
+          name: (name && name.trim()) ? name.trim() : rawIdentifier,
           username: rawIdentifier,
           role: assignedRole,
-          phone: phone || (assignedRole === 'elderly' ? '7592934065' : '9876543210'),
+          phone: phone || rawIdentifier,
           createdAt: new Date().toISOString()
         };
         db.users.push(user);
@@ -526,10 +532,19 @@ const server = http.createServer(async (req, res) => {
 
       let pairing = db.pairings[code];
       if (!pairing) {
-        // Fallback: If code is provided, associate with the active elderly user or demo senior
-        const fallbackElderly = db.users.find(u => u.role === 'elderly') || {
-          id: 'usr_demo_elderly',
-          name: 'Meera (Senior)',
+        // Case-insensitive lookup
+        const foundKey = Object.keys(db.pairings).find(k => k.toUpperCase() === code);
+        if (foundKey) {
+          pairing = db.pairings[foundKey];
+        }
+      }
+
+      if (!pairing) {
+        // Associate with the most recently active elderly user
+        const elderlyList = db.users.filter(u => u.role === 'elderly');
+        const fallbackElderly = (elderlyList.length > 0 ? elderlyList[elderlyList.length - 1] : null) || {
+          id: 'usr_senior',
+          name: 'Senior',
           role: 'elderly'
         };
         pairing = {
@@ -878,7 +893,16 @@ const server = http.createServer(async (req, res) => {
           .map(r => r.elderlyId);
 
         if (linkedSeniorIds.length > 0) {
-          userAlerts = db.alerts.filter(a => linkedSeniorIds.includes(a.elderlyId));
+          userAlerts = db.alerts
+            .filter(a => linkedSeniorIds.includes(a.elderlyId))
+            .map(a => {
+              const rel = db.relationships.find(r => r.elderlyId === a.elderlyId && r.caregiverId === user.id);
+              const elUser = db.users.find(u => u.id === a.elderlyId);
+              return {
+                ...a,
+                elderlyName: (rel && rel.elderlyName) || (elUser && elUser.name) || a.elderlyName || 'Senior'
+              };
+            });
         } else {
           // Unpaired caregiver has NO paired senior -> exactly 0 alerts on initial signup
           userAlerts = [];
