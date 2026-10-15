@@ -11,6 +11,19 @@ const DASHBOARD_DIR = fs.existsSync(path.join(__dirname, 'dashboard'))
   ? path.join(__dirname, 'dashboard') 
   : path.resolve(__dirname, '..', 'safecall-dashboard');
 
+const MIME_TYPES = {
+  '.html': 'text/html',
+  '.css': 'text/css',
+  '.js': 'application/javascript',
+  '.json': 'application/json',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.svg': 'image/svg+xml',
+  '.apk': 'application/vnd.android.package-archive',
+  '.ico': 'image/x-icon'
+};
+
 // --- In-Memory Database with Auto-Persistence ---
 let db = {
   users: [],         // { id, email, passwordHash, salt, name, role, phone, createdAt, fcmToken }
@@ -874,7 +887,11 @@ const server = http.createServer(async (req, res) => {
           .map(r => r.elderlyId);
 
         if (linkedSeniorIds.length > 0) {
-          userAlerts = db.alerts.filter(a => linkedSeniorIds.includes(a.elderlyId));
+          userAlerts = db.alerts.filter(a => 
+            linkedSeniorIds.includes(a.elderlyId) || 
+            a.elderlyId === 'usr_demo_elderly' || 
+            a.isSimulation === false
+          );
         } else {
           // If pairing hasn't been completed yet, show alerts so caregiver device still receives demo notifications
           userAlerts = db.alerts;
@@ -883,6 +900,21 @@ const server = http.createServer(async (req, res) => {
 
       sendJson(res, 200, { alerts: userAlerts });
       return;
+    }
+
+    // Direct APK Download Endpoint
+    if ((pathname === '/app-debug.apk' || pathname === '/download' || pathname === '/apk') && method === 'GET') {
+      const apkPath = path.join(__dirname, 'app-debug.apk');
+      if (fs.existsSync(apkPath)) {
+        const stat = fs.statSync(apkPath);
+        res.writeHead(200, {
+          'Content-Type': 'application/vnd.android.package-archive',
+          'Content-Length': stat.size,
+          'Content-Disposition': 'attachment; filename="SafeCall-AI.apk"'
+        });
+        fs.createReadStream(apkPath).pipe(res);
+        return;
+      }
     }
 
     // 12. Alerts: Acknowledge Alert (Caregiver)
