@@ -733,7 +733,11 @@ const server = http.createServer(async (req, res) => {
 
     // 10. Alerts: Trigger Alert (from Elderly device or Simulation)
     if (pathname === '/api/alerts/trigger' && method === 'POST') {
+      const body = await parseJsonBody(req);
       let user = getUserFromAuthHeader(req);
+      if (!user && body.elderlyId) {
+        user = db.users.find(u => u.id === body.elderlyId);
+      }
       if (!user) {
         // Fallback for real Android native telephony events where auth token might be uninitialized
         user = db.users.find(u => u.role === 'elderly') || {
@@ -743,7 +747,6 @@ const server = http.createServer(async (req, res) => {
         };
       }
 
-      const body = await parseJsonBody(req);
       const { idempotentId, callerName, callerPhone, score, level, explanation, callTime, isSimulation } = body;
 
       if (score === undefined || score === null) {
@@ -765,9 +768,9 @@ const server = http.createServer(async (req, res) => {
         });
       }
 
-      // Check configured threshold
-      const userSettings = db.settings[user.id] || { threshold: 80, autoAlertEnabled: true };
-      const threshold = userSettings.threshold || 80;
+      // Check configured threshold (default: 60/100)
+      const userSettings = db.settings[user.id] || { threshold: 60, autoAlertEnabled: true };
+      const threshold = (userSettings.threshold !== undefined && userSettings.threshold !== null) ? userSettings.threshold : 60;
 
       if (score < threshold) {
         return sendJson(res, 200, {
@@ -869,24 +872,76 @@ const server = http.createServer(async (req, res) => {
       if (user.role === 'elderly') {
         userAlerts = db.alerts.filter(a => a.elderlyId === user.id);
       } else {
-        // Strict Authorization: Caregivers can view alerts from elderly persons they are actively paired with
+        // Strict Authorization: Caregivers ONLY view alerts from seniors they are actively paired with
         const linkedSeniorIds = db.relationships
           .filter(r => r.caregiverId === user.id && r.status === 'ACTIVE')
           .map(r => r.elderlyId);
 
         if (linkedSeniorIds.length > 0) {
-          userAlerts = db.alerts.filter(a => 
-            linkedSeniorIds.includes(a.elderlyId) || 
-            a.elderlyId === 'usr_demo_elderly' || 
-            a.isSimulation === false
-          );
+          userAlerts = db.alerts.filter(a => linkedSeniorIds.includes(a.elderlyId));
         } else {
-          // If pairing hasn't been completed yet, show alerts so caregiver device still receives demo notifications
-          userAlerts = db.alerts;
+          // Unpaired caregiver has NO paired senior -> exactly 0 alerts on initial signup
+          userAlerts = [];
         }
       }
 
       sendJson(res, 200, { alerts: userAlerts });
+      return;
+    }
+
+    // 11b. Alerts: Clear History (for fresh testing/clean viva demonstration)
+    if (pathname === '/api/alerts/clear' && method === 'POST') {
+      const user = getUserFromAuthHeader(req);
+      if (!user) return sendError(res, 401, 'Authentication required');
+      if (user.role === 'elderly') {
+        db.alerts = db.alerts.filter(a => a.elderlyId !== user.id);
+      } else {
+        const linkedSeniorIds = db.relationships
+          .filter(r => r.caregiverId === user.id && r.status === 'ACTIVE')
+          .map(r => r.elderlyId);
+        db.alerts = db.alerts.filter(a => !linkedSeniorIds.includes(a.elderlyId));
+      }
+      persistDatabase();
+      sendJson(res, 200, { success: true, message: 'Alert history cleared.' });
+      return;
+    }
+
+    // 11c. Telephony: Live Event Telemetry Ping from Senior Phone
+    if (pathname === '/api/telephony/ping' && method === 'POST') {
+      const body = await parseJsonBody(req);
+      const { elderlyId, number, outcome, missedCount, maxGate, score, timestamp } = body;
+      if (!db.telemetry) db.telemetry = {};
+      const key = elderlyId || 'usr_demo_elderly';
+      db.telemetry[key] = {
+        number: number || 'Unknown',
+        outcome: outcome || 'MISSED',
+        missedCount: missedCount || 0,
+        maxGate: maxGate || 4,
+        score: score || 0,
+        timestamp: timestamp || Date.now()
+      };
+      persistDatabase();
+      sendJson(res, 200, { success: true, telemetry: db.telemetry[key] });
+      return;
+    }
+
+    // 11d. Telephony: Live Status Monitor Query for Senior & Caregiver screens
+    if (pathname === '/api/telephony/status' && method === 'GET') {
+      const user = getUserFromAuthHeader(req);
+      if (!user) return sendError(res, 401, 'Authentication required');
+      if (!db.telemetry) db.telemetry = {};
+      let state = null;
+      if (user.role === 'elderly') {
+        state = db.telemetry[user.id] || null;
+      } else {
+        const linkedSeniorIds = db.relationships
+          .filter(r => r.caregiverId === user.id && r.status === 'ACTIVE')
+          .map(r => r.elderlyId);
+        if (linkedSeniorIds.length > 0) {
+          state = db.telemetry[linkedSeniorIds[0]] || null;
+        }
+      }
+      sendJson(res, 200, { telemetry: state });
       return;
     }
 
